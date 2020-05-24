@@ -68,6 +68,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user").hasAnyRole("USER", "ADMIN")
                 .antMatchers("/", "static/css", "static/js", "/h2-console", "/h2-console/login.do**").permitAll()
                 .and().formLogin();
+
+   /*     http.authorizeRequests()
+                .anyRequest().fullyAuthenticated()
+                .and()
+                .formLogin();*/
     }
 
     @Bean
